@@ -1,0 +1,140 @@
+*{
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body{
+	height: 100%;
+	font-family: sans-serif;	
+}
+
+header {
+	background: url(../images/background.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	/*background-color: #1F2937;*/
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+/*navigation*/
+nav {
+	background-color: transparent;
+	flex:1;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+nav div {
+
+}
+
+nav a {
+	color: #E5E7EB;
+	font: 18px sans-serif;
+	text-decoration: none;
+}
+
+#Logo {
+	color: #F9FAF8;
+	font: 24px sans-serif;
+	font-weight: bold;
+	margin-right: auto;
+}
+/* end of navigation*/
+
+/*header content*/
+.header_content {
+	flex: 1;
+	display: flex;
+	gap: 50px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.header_content div {
+	flex: 2 1 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: cener;
+	color: white;
+}
+
+#text_one { font: bold 48px sans-serif; color: #F9FAF8; }
+#text_two { font: 24px sans-serif; color: #E5E7EB; }
+
+header button {
+	height: 50px;
+	width: 80px;
+	align-self: start;
+	background-color: #3882F6;
+	color: white;
+}
+
+img {
+	flex: 1 1 0;
+	max-height: 300px;
+	max-width: 500px;
+	transform: translateX(0px);
+	animation: float 6s ease-out infinite;
+}
+@keyframes float{
+	0%{transform: translateY(0px);}
+	50%{transform: translateY(-80px);}
+	100%{transform: translateY(0px);}
+}
+/* end of header content*/
+
+
+.question {
+	background-color: #ffffff8f;
+	font: italic 24px cursive;
+	display: flex;
+	justify-content: center;
+	align-items: cener;
+	padding-top: 20px;
+}
+
+/* MAIN (only citation)*/
+main{
+	background: url(../images/background.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding-left: 250px;
+	padding-right: 250px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+main .main_one {
+	font: italic 48px cursive;
+	align-self: center;
+}
+main .main_two {
+	font: bold 18px cursive;
+	align-self: end;
+}
+/* end of main*/
+
+/* Footer*/
+footer {
+	background-color: #bbbba554;
+	font: italic 12px sans-serif;
+	display: flex;
+	justify-content: center;
+}
