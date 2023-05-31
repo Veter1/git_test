@@ -126,15 +126,19 @@ main{
 	padding-bottom: 100px;
 }
 main .main_text{
+	display: flex;
 	flex:1;
+	flex-direction: column;
 }
 main .main_one {
 	font: italic 48px cursive;
 	align-self: center;
+	flex: 1;
 }
 main .main_two {
 	font: bold 18px cursive;
 	align-self: end;
+	flex: 1;
 }
 
 /*slider*/
