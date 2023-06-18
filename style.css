@@ -34,7 +34,7 @@ h2{
 header{
     /* full-screan BG */
     min-height: 100vh;
-    background-image: url('../image/head/head_bg.jpg');
+    background-image: url('image/head/Head_bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
