@@ -34,7 +34,7 @@ h2{
 header{
     /* full-screan BG */
     min-height: 100vh;
-    background-image: url('image/head/Head_bg.jpg');
+    background-image: url('image/head/fullsrcBG.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -64,6 +64,7 @@ header{
                 font-weight: 700;
                 text-transform: uppercase;
                 position: relative;
+                cursor: pointer;
             }
         }
 
