@@ -86,6 +86,7 @@ const swiper = new Swiper('.swiper', {
 //------------------------------
 
 
+// обработка нажатия кнопок меню ----------------
 let menu = body.querySelector('header nav ul');
 let description_unit = body.querySelector('.description');
 let work_unit = body.querySelector('.works');
@@ -93,9 +94,9 @@ let shop_unit = body.querySelector('.shop');
 let contact_unit = body.querySelector('.contact');
 
 let menu_button_ABOUT_US = body.querySelector('ABOUT_US');
-menu.addEventListener("click", test);
+menu.addEventListener("click", menu_button_click);
 
-function test(event){
+function menu_button_click(event){
     //console.log(event.target);
     if (event.target.classList.contains('ABOUT_US'))
     {
@@ -115,3 +116,37 @@ function test(event){
         contact_unit.scrollIntoView({block: "center", behavior: "smooth"});
     }
 }
+//------------------------------
+
+
+
+// прячем/показываем панель навигации при скролинге ----------------
+window.addEventListener('scroll', test);
+let old_scroll_y = 0, current_top = -1000;
+function test(event){
+    if (innerWidth < 767){
+        if (current_top == -1000)
+            current_top = window.getComputedStyle(menu_nav).top.replace('px', '');
+        else
+            current_top = menu_nav.style.top.replace('px', '');
+
+        if (window.scrollY > old_scroll_y && current_top != -90) // крутим в низ
+        {
+            current_top -= (window.scrollY - old_scroll_y);
+            if (current_top < -90){
+                current_top = -90;
+            }
+        }
+        else if (window.scrollY < old_scroll_y && current_top != 0) // крутим вверх
+        {
+            current_top = (old_scroll_y - window.scrollY) - (current_top * -1);
+            if (current_top > 0){
+                current_top = 0;
+            }
+        }
+
+        old_scroll_y = window.scrollY;
+        menu_nav.style.top = current_top +'px';
+    }
+}
+//------------------------------
