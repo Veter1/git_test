@@ -1,0 +1,58 @@
+@import "_nullstyle";
+
+// breakpoints
+$min_phone_width: 320px;
+$min_tablet_width: 768px;
+$min_desktop_width: 1024px;
+//-------------
+// colors
+$color_for_bg: #F5F1EE;
+$color_for_text: #58626C;
+$color_for_el_1: #DAC8BE;
+$color_for_el_2: #ECC1A1;
+//-------------
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: $color_for_bg;
+    color: #58626C;
+}
+
+main{
+    transition-duration: 1.5s;
+    min-height: 100vh;
+    section{
+        min-height: 100vh;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+    }
+
+    // рухомі декоративні кола керуються скриптом
+    .circles{
+        transition-duration: 1s;
+        position: absolute;
+        background-color: $color_for_el_2;
+        border-radius: 50%;
+        opacity: 0.7;
+    }
+    //----------------------------------------
+
+    /*
+    #bubels{
+        transition-duration: 1s;
+        position: absolute;
+        height: 200px;
+        width: 220px;
+        border-radius: 50%;
+        background-color: $color_for_el_2;
+        opacity: 0.9;
+        //animation-name: test;
+        //animation-duration: 10s; 
+        //animation-timing-function: ease-in-out;
+    }*/    
+}

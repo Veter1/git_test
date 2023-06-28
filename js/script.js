@@ -1,3 +1,182 @@
+
+let body = document.body;
+
+let main_el = body.querySelectorAll('main')[0];
+let circles = body.querySelectorAll('.circles');
+let sections = body.querySelectorAll('.sections');
+
+let curent_section = 0;
+let touchstart_y = 0;
+let permission = true;
+
+/*                  тестові бульбашки
+document.getElementById('bubels').animate([
+    {transform: 'translate3D(0, '+ window.screen.height +'px, 0)' },
+    {transform: 'translate3D(30px, '+ (window.screen.height - (window.screen.height/2)) +'px, 0)' },
+    {transform: 'translate3D(0px, 0, 0)' },
+    {transform: 'translate3D(30px, -500px, 0)' },
+    //...
+  ], {
+      duration: 5000,
+  });;
+*/
+
+//console.log(window.screen.height);
+
+// Стартова властивості рухомих декоративних кіл
+circles[0].style = 'left: '+(0.8 * 100)/1.4+'%;'+
+' top: '+(0.8 * 100)/2*(-1)+'%;'+
+' height: '+(window.innerHeight * 0.8)+'px;'+
+' width: '+(window.innerWidth * 0.5)+'px';
+circles[1].style = 'left: '+0+'%;'+
+' top: '+(0.8 * 100)/1.2+'%;'+
+' height: '+(window.innerHeight * 0.7)+'px;'+
+' width: '+(window.innerWidth * 0.55)+'px';
+// ---------------
+
+// отлавливание всех способов перелистывания
+document.addEventListener("keydown", function(event){
+    if (event.code == 'ArrowUp')
+        scrooll_to_section("up")
+    else if (event.code == 'ArrowDown')
+        scrooll_to_section("down")
+})
+document.addEventListener("wheel", function(event){
+    if (event.deltaY > 0)
+        scrooll_to_section("down")
+    else if (event.deltaY < 0)
+        scrooll_to_section("up")
+})
+document.addEventListener("touchstart", function(event){
+    touchstart_y = event.changedTouches[0].pageY;
+})
+document.addEventListener("touchend", function(event){
+    if (event.changedTouches[0].pageY > touchstart_y)
+        scrooll_to_section("up");
+    else if (event.changedTouches[0].pageY < touchstart_y)
+        scrooll_to_section("down");
+})
+// ---------------
+
+// функция перелистывания между секциями
+function scrooll_to_section(direction){
+
+    
+    // запобіжник, не дає перелистувати секції частіше ніж в 1100 мс.
+    if (permission)
+        setTimeout(function(){ permission = true; }, 1100);
+    else if (!permission)
+        return false;
+    permission = false;
+    // ---------------
+    
+
+    // змінюємо секцію на сусідню
+    if (direction == "up" && curent_section != 0){
+        console.log('scroll up section, curent_section = '+curent_section);
+        sections[curent_section - 1].scrollIntoView({block: "center", behavior: "smooth"});
+        curent_section -= 1;
+    }
+    else if (direction == "down" && curent_section != (sections.length - 1)){
+        console.log('scroll bot section, curent_section = '+curent_section);
+        sections[curent_section + 1].scrollIntoView({block: "center", behavior: "smooth"});
+        curent_section += 1;
+    }
+    console.log('end scrool, curent_section = '+curent_section);
+    // ---------------
+
+    // рухаємо декоративні кола
+    switch (curent_section) {
+        case 0:{
+            console.log('секція перша, кільця відповідно до неї');
+            circles[0].style = 'left: '+(0.8 * 100)/1.4+'%;'+
+            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' width: '+(window.innerWidth * 0.5)+'px';
+
+            circles[1].style = 'left: '+0+'%;'+
+            ' top: '+(0.8 * 100)/1.2+'%;'+
+            ' height: '+(window.innerHeight * 0.7)+'px;'+
+            ' width: '+(window.innerWidth * 0.55)+'px';
+            break;
+        }
+        case 1:{
+            console.log('секція друга, кільця відповідно до неї');
+            circles[0].style = 'left: '+0+'%;'+
+            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' width: '+(window.innerWidth * 0.5)+'px';
+
+            circles[1].style = 'left: '+((0.8/1.15) * 100)+'%;'+
+            ' top: '+(0.8 * 100)/1.2+'%;'+
+            ' height: '+(window.innerHeight * 0.7)+'px;'+
+            ' width: '+(window.innerWidth * 0.55)+'px';
+            break;
+        }
+        case 2:{
+            console.log('секція третя, кільця відповідно до неї');
+            circles[0].style = 'left: '+(50-25)+'%;'+
+            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' width: '+(window.innerWidth * 0.5)+'px';
+
+            circles[1].style = 'left: '+(50-25)+'%;'+
+            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' width: '+(window.innerWidth * 0.5)+'px';
+            break;
+        }
+        case 3:{
+            console.log('секція четверта, кільця відповідно до неї');
+            circles[0].style = 'left: '+(50-25)+'%;'+
+            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' width: '+(window.innerWidth * 0.5)+'px';
+
+            circles[1].style = 'left: '+(50-25)+'%;'+
+            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' width: '+(window.innerWidth * 0.5)+'px';
+            break;
+        }
+        case 4:{
+            console.log('секція п’ята, кільця відповідно до неї');
+            circles[0].style = 'left: '+50+'%;'+
+            ' top: '+(0.8 * 100)/3*(-1)+'%;'+
+            ' height: '+(window.innerHeight * 0.65)+'px;'+
+            ' width: '+(window.innerWidth * 0.6)+'px';
+
+            circles[1].style = 'left: '+50+'%;'+
+            ' top: '+(0.8 * 100)/1.5+'%;'+
+            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' width: '+(window.innerWidth * 0.6)+'px';
+            break;
+        }
+        case 5:{
+            console.log('секція шоста, кільця відповідно до неї');
+            circles[0].style = 'left: '+50+'%;'+
+            ' top: '+(100 * (-1))+'%;'+
+            ' height: '+(window.innerHeight * 0.7)+'px;'+
+            ' width: '+(window.innerWidth * 0.8)+'px';
+
+            circles[1].style = 'left: '+(50-35)+'%;'+
+            ' top: '+(0.8 * 100)/2+'%;'+
+            ' height: '+(window.innerHeight * 0.9)+'px;'+
+            ' width: '+(window.innerWidth * 0.7)+'px';
+            break;
+        }
+      }    
+      // ---------------
+}
+// -------------------
+
+
+
+
+
+
+
+/*                               OLD DOC
 let body = document.body;
 
 // Всплывающий зелёный фонон на больших картинках ----------------
@@ -56,6 +235,8 @@ menu_icon.addEventListener("click", Menu_controll);
 function Menu_controll(){    
     //console.log(menu_nav);
     if (!display_status) {
+        body.style.overflow = 'hidden';
+
         display_status = true;
         menu_nav.classList.add('hide_menu');
         setTimeout(function(){
@@ -65,6 +246,8 @@ function Menu_controll(){
          }, 685);
          setTimeout(function(){ menu_nav.classList.remove('show_menu') }, 690+690);              
     } else {
+        body.style.overflow = 'auto';
+
         display_status = false;
         menu_nav.classList.add('hide_menu');
         setTimeout(function(){
@@ -150,3 +333,4 @@ function test(event){
     }
 }
 //------------------------------
+*/
