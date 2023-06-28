@@ -30,6 +30,12 @@ main{
         justify-content: center;
         align-items: center;
         font-size: 48px;
+
+        transition-duration: 1s;
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        &.section_1{ top: 0%; }
     }
 
     // рухомі декоративні кола керуються скриптом

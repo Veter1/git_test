@@ -68,21 +68,24 @@ function scrooll_to_section(direction){
     else if (!permission)
         return false;
     permission = false;
-    // ---------------
-    
+    // ---------------    
 
     // змінюємо секцію на сусідню
     if (direction == "up" && curent_section != 0){
-        console.log('scroll up section, curent_section = '+curent_section);
-        sections[curent_section - 1].scrollIntoView({block: "center", behavior: "smooth"});
+        //console.log('scroll up section, curent_section = '+curent_section);
+        sections[curent_section].style = 'top: 100%; left: 0;';
+        sections[curent_section - 1].style = 'top: 0; left: 0;';
+        //sections[curent_section - 1].scrollIntoView({block: "center", behavior: "smooth"});
         curent_section -= 1;
     }
     else if (direction == "down" && curent_section != (sections.length - 1)){
-        console.log('scroll bot section, curent_section = '+curent_section);
-        sections[curent_section + 1].scrollIntoView({block: "center", behavior: "smooth"});
+        //console.log('scroll bot section, curent_section = '+curent_section);
+        sections[curent_section].style = 'top: -100%; left: 0;';
+        sections[curent_section + 1].style = 'top: 0; left: 0;';
+        //sections[curent_section + 1].scrollIntoView({block: "center", behavior: "smooth"});
         curent_section += 1;
     }
-    console.log('end scrool, curent_section = '+curent_section);
+    //console.log('end scrool, curent_section = '+curent_section);
     // ---------------
 
     // рухаємо декоративні кола
