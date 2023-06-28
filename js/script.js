@@ -8,6 +8,10 @@ let sections = body.querySelectorAll('.sections');
 let curent_section = 0;
 let touchstart_y = 0;
 let permission = true;
+let circle_height_koef = 0.8;
+
+if (window.innerHeight / window.innerWidth > 1)
+    circle_height_koef = 0.4;
 
 /*                  тестові бульбашки
 document.getElementById('bubels').animate([
@@ -24,14 +28,16 @@ document.getElementById('bubels').animate([
 //console.log(window.screen.height);
 
 // Стартова властивості рухомих декоративних кіл
-circles[0].style = 'left: '+(0.8 * 100)/1.4+'%;'+
-' top: '+(0.8 * 100)/2*(-1)+'%;'+
-' height: '+(window.innerHeight * 0.8)+'px;'+
+circles[0].style = 'left: '+((1 - circle_height_koef * 0.3) * 100)/1.4+'%;'+
+' top: '+(circle_height_koef * 100)/2*(-1)+'%;'+
+' height: '+(window.innerHeight * circle_height_koef)+'px;'+
 ' width: '+(window.innerWidth * 0.5)+'px';
-circles[1].style = 'left: '+0+'%;'+
-' top: '+(0.8 * 100)/1.2+'%;'+
-' height: '+(window.innerHeight * 0.7)+'px;'+
+
+circles[1].style = 'left: '+(circle_height_koef - 1)/3 * 100+'%;'+
+' top: '+((1 - circle_height_koef * 0.3) * 100)/1.2+'%;'+
+' height: '+(window.innerHeight * (circle_height_koef - 0.1))+'px;'+
 ' width: '+(window.innerWidth * 0.55)+'px';
+scrooll_to_section('up');
 // ---------------
 
 // отлавливание всех способов перелистывания
@@ -51,17 +57,15 @@ document.addEventListener("touchstart", function(event){
     touchstart_y = event.changedTouches[0].pageY;
 })
 document.addEventListener("touchend", function(event){
-    if (event.changedTouches[0].pageY > touchstart_y)
+    if (event.changedTouches[0].pageY > touchstart_y && ((event.changedTouches[0].pageY - touchstart_y ) > 100))
         scrooll_to_section("up");
-    else if (event.changedTouches[0].pageY < touchstart_y)
+    else if (event.changedTouches[0].pageY < touchstart_y && ((touchstart_y - event.changedTouches[0].pageY) > 100))
         scrooll_to_section("down");
 })
 // ---------------
 
 // функция перелистывания между секциями
-function scrooll_to_section(direction){
-
-    
+function scrooll_to_section(direction){    
     // запобіжник, не дає перелистувати секції частіше ніж в 1100 мс.
     if (permission)
         setTimeout(function(){ permission = true; }, 1100);
@@ -91,80 +95,80 @@ function scrooll_to_section(direction){
     // рухаємо декоративні кола
     switch (curent_section) {
         case 0:{
-            console.log('секція перша, кільця відповідно до неї');
+            //console.log('секція перша, кільця відповідно до неї');
             circles[0].style = 'left: '+(0.8 * 100)/1.4+'%;'+
-            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
-            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' top: '+(circle_height_koef * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * circle_height_koef)+'px;'+
             ' width: '+(window.innerWidth * 0.5)+'px';
 
-            circles[1].style = 'left: '+0+'%;'+
-            ' top: '+(0.8 * 100)/1.2+'%;'+
-            ' height: '+(window.innerHeight * 0.7)+'px;'+
+            circles[1].style = 'left: '+(circle_height_koef - 1)/3 * 100+'%;'+
+            ' top: '+((1 - circle_height_koef * 0.3) * 100)/1.2+'%;'+
+            ' height: '+(window.innerHeight * (circle_height_koef - 0.1))+'px;'+
             ' width: '+(window.innerWidth * 0.55)+'px';
             break;
         }
         case 1:{
-            console.log('секція друга, кільця відповідно до неї');
-            circles[0].style = 'left: '+0+'%;'+
-            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
-            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            //console.log('секція друга, кільця відповідно до неї');
+            circles[0].style = 'left: '+(circle_height_koef - 1)/3 * 100+'%;'+
+            ' top: '+(circle_height_koef * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * circle_height_koef)+'px;'+
             ' width: '+(window.innerWidth * 0.5)+'px';
 
             circles[1].style = 'left: '+((0.8/1.15) * 100)+'%;'+
             ' top: '+(0.8 * 100)/1.2+'%;'+
-            ' height: '+(window.innerHeight * 0.7)+'px;'+
+            ' height: '+(window.innerHeight * (circle_height_koef - 0.1))+'px;'+
             ' width: '+(window.innerWidth * 0.55)+'px';
             break;
         }
         case 2:{
-            console.log('секція третя, кільця відповідно до неї');
-            circles[0].style = 'left: '+(50-25)+'%;'+
-            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
-            ' height: '+(window.innerHeight * 0.8)+'px;'+
-            ' width: '+(window.innerWidth * 0.5)+'px';
+            // console.log('секція третя, кільця відповідно до неї');
+            circles[0].style = 'left: '+(50-((1 - circle_height_koef + 0.3)*50))+'%;'+
+            ' top: '+(circle_height_koef * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * circle_height_koef)+'px;'+
+            ' width: '+(window.innerWidth * (1 - circle_height_koef + 0.3))+'px';
 
             circles[1].style = 'left: '+(50-25)+'%;'+
-            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
-            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' top: '+(circle_height_koef * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * circle_height_koef)+'px;'+
             ' width: '+(window.innerWidth * 0.5)+'px';
             break;
         }
         case 3:{
-            console.log('секція четверта, кільця відповідно до неї');
+            // console.log('секція четверта, кільця відповідно до неї');
             circles[0].style = 'left: '+(50-25)+'%;'+
-            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
-            ' height: '+(window.innerHeight * 0.8)+'px;'+
+            ' top: '+(circle_height_koef * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * circle_height_koef)+'px;'+
             ' width: '+(window.innerWidth * 0.5)+'px';
 
-            circles[1].style = 'left: '+(50-25)+'%;'+
-            ' top: '+(0.8 * 100)/2*(-1)+'%;'+
-            ' height: '+(window.innerHeight * 0.8)+'px;'+
-            ' width: '+(window.innerWidth * 0.5)+'px';
+            circles[1].style = 'left: '+(50-((1 - circle_height_koef + 0.3)*50))+'%;'+
+            ' top: '+(circle_height_koef * 100)/2*(-1)+'%;'+
+            ' height: '+(window.innerHeight * circle_height_koef)+'px;'+
+            ' width: '+(window.innerWidth * (1 - circle_height_koef + 0.3))+'px';
             break;
         }
         case 4:{
-            console.log('секція п’ята, кільця відповідно до неї');
+            //console.log('секція п’ята, кільця відповідно до неї');
             circles[0].style = 'left: '+50+'%;'+
-            ' top: '+(0.8 * 100)/3*(-1)+'%;'+
-            ' height: '+(window.innerHeight * 0.65)+'px;'+
-            ' width: '+(window.innerWidth * 0.6)+'px';
+            ' top: '+(circle_height_koef * 100)/3*(-1)+'%;'+
+            ' height: '+(window.innerHeight * (circle_height_koef - 0.15))+'px;'+
+            ' width: '+(window.innerWidth * (1 - circle_height_koef + 0.4))+'px';
 
             circles[1].style = 'left: '+50+'%;'+
             ' top: '+(0.8 * 100)/1.5+'%;'+
-            ' height: '+(window.innerHeight * 0.8)+'px;'+
-            ' width: '+(window.innerWidth * 0.6)+'px';
+            ' height: '+(window.innerHeight * circle_height_koef)+'px;'+
+            ' width: '+(window.innerWidth * (1 - circle_height_koef + 0.4))+'px';
             break;
         }
         case 5:{
-            console.log('секція шоста, кільця відповідно до неї');
+            //console.log('секція шоста, кільця відповідно до неї');
             circles[0].style = 'left: '+50+'%;'+
             ' top: '+(100 * (-1))+'%;'+
-            ' height: '+(window.innerHeight * 0.7)+'px;'+
+            ' height: '+(window.innerHeight * (circle_height_koef - 0.1))+'px;'+
             ' width: '+(window.innerWidth * 0.8)+'px';
 
             circles[1].style = 'left: '+(50-35)+'%;'+
             ' top: '+(0.8 * 100)/2+'%;'+
-            ' height: '+(window.innerHeight * 0.9)+'px;'+
+            ' height: '+(window.innerHeight * (circle_height_koef + 0.1))+'px;'+
             ' width: '+(window.innerWidth * 0.7)+'px';
             break;
         }
