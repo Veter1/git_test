@@ -76,17 +76,20 @@ html, body {
   color: #58626C;
 }
 
-@media (max-width: 767px) {
-  body {
-    position: fixed;
-  }
+/* @media (max-width: 767px) {
+    body {
+         position:fixed;
+    }
+}
+@-ms-viewport {
+    user-zoom: fixed;
 }
 @-o-viewport {
-  user-zoom: fixed;
+    user-zoom: fixed;
 }
 @viewport {
-  user-zoom: fixed;
-}
+    user-zoom: fixed;
+}  */
 main {
   overflow: hidden;
   transition-duration: 1.5s;

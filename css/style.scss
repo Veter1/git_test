@@ -20,7 +20,7 @@ html, body {
 }
 
 // запрещаем лишний скролл и зум
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     body {
          position:fixed;
     }
@@ -33,7 +33,7 @@ html, body {
 }
 @viewport {
     user-zoom: fixed;
-}  
+}  */ 
 //-------------
 
 main{
