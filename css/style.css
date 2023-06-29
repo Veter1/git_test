@@ -110,7 +110,7 @@ main section {
   position: absolute;
   bottom: -100%;
   left: 0%;
-  border: solid 2px red;
+  border: solid 2px grey;
 }
 main section.section_1 {
   bottom: 0%;
