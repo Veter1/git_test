@@ -17,7 +17,7 @@ html, body {
     overflow: hidden;
     background-color: $color_for_bg;
     color: #58626C;
-    position:fixed;
+    position: fixed;
     bottom: 0%;
     left: 0%;
 }
@@ -27,6 +27,7 @@ main{
 
     transition-duration: 1.5s;
     min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     section{
         overflow: hidden;
 

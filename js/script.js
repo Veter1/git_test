@@ -10,6 +10,15 @@ let touchstart_y = 0;
 let permission = true;
 let circle_height_koef = 0.8;
 
+// установление своего vh
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+// -----------------------------
+
 if (window.innerHeight / window.innerWidth > 1)
     circle_height_koef = 0.4;
 
