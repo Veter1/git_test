@@ -75,13 +75,14 @@ html, body {
   background-color: #F5F1EE;
   color: #58626C;
   position: fixed;
-  bottom: 0;
+  bottom: 0%;
+  left: 0%;
 }
 
 main {
   overflow: hidden;
   transition-duration: 1.5s;
-  min-height: 100%;
+  min-height: 100vh;
   /*
   #bubels{
       transition-duration: 1s;
@@ -107,12 +108,12 @@ main section {
   font-size: 48px;
   transition-duration: 1s;
   position: absolute;
-  top: 100%;
+  bottom: -100%;
   left: 0%;
   border: solid 2px red;
 }
 main section.section_1 {
-  top: 0%;
+  bottom: 0%;
 }
 main .section_1 div {
   height: 100%;

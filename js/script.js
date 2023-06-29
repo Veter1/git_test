@@ -76,13 +76,13 @@ function scrooll_to_section(direction){
 
     // змінюємо секцію на сусідню
     if (direction == "up" && curent_section != 0){
-        sections[curent_section].style = 'top: 100%; left: 0;';
-        sections[curent_section - 1].style = 'top: 0; left: 0;';
+        sections[curent_section].style = 'bottom: -100%; left: 0;';
+        sections[curent_section - 1].style = 'bottom: 0; left: 0;';
         curent_section -= 1;
     }
     else if (direction == "down" && curent_section != (sections.length - 1)){
-        sections[curent_section].style = 'top: -100%; left: 0;';
-        sections[curent_section + 1].style = 'top: 0; left: 0;';
+        sections[curent_section].style = 'bottom: 100%; left: 0;';
+        sections[curent_section + 1].style = 'bottom: 0; left: 0;';
         curent_section += 1;
     }
     // ---------------
