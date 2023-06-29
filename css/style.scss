@@ -22,9 +22,50 @@ html, body {
     left: 0%;
 }
 
+nav{
+    position: absolute;
+    bottom: 25%;
+    left: -8%;
+    height: 50%;
+    width: 150px;
+    background-color: $color_for_el_1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20%;
+    z-index: 3;
+
+    div.nav_panel{
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        div.nav_item{
+            position: absolute;
+            top: 45%;
+            right: -5%;
+            border-radius: 50%;
+            background-color: $color_for_el_2;
+            height: 25%;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition-duration: 0.5s;
+
+            img{
+                flex: 0 1 auto;
+                height: 85%;
+                width: 85%;
+                filter: contrast(40%);
+            }
+        }
+    }
+    
+}
+
 main{
     overflow: hidden;
-
     transition-duration: 1.5s;
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
@@ -41,14 +82,15 @@ main{
 
         transition-duration: 1s;
         position: absolute;
-        // top: 100%;
         bottom: -100%;
         left: 0%;
+        opacity: 0;
         &.section_1{ bottom: 0%; }
 
         border: solid 2px grey;
     }
     .section_1{
+        opacity: 1;
         div{
             height: 100%;
             width: 100%;
@@ -57,17 +99,14 @@ main{
 
             div.wrapper_text{
                 flex: 1;
-                // border: solid 1px black;
                 display: flex;
                 justify-content: flex-end;
                 align-items: flex-start;
                 
                 h1{
-                    // padding-top: 8%;
-                    padding-left: 3%;
+                    padding-left: 10%;
                     letter-spacing: 3px;
                     line-height: 1.5;
-                    // border: solid 1px green;
                 }
             }
             div.wrapper_image{
@@ -330,6 +369,68 @@ main{
                         }
                     }
                 }                
+            }
+        }
+    }
+
+    .section_6{
+        div.content{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: solid 2px grey;
+
+            div.header_wrapper{
+                height: 100%;
+                width: 100%;
+                flex: 0 1 35%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h1{
+                    flex: 0 1 auto;
+                    letter-spacing: 10px;
+                    justify-self: center;
+                    z-index: 0;
+                    font-size: 64px;
+                }
+            }
+            div.contacts_wrapper{
+                z-index: 2;
+                height: 100%;
+                width: 100%;
+                flex: 0 1 65%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                div{
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    gap: 2%;
+                    &.messangers{
+                        flex: 0 1 50%;
+                        display: flex;
+                        align-items: flex-end;
+                        img{margin-bottom: 3%;}
+                        #viber_icon{ margin-left: 5%; height: 40%; width: 10%; }
+                        #telegram_icon{ height: 47%; width: 15%; }
+                    }
+                    &.phone{
+                        flex: 0 1 25%;
+                        #phone_icon{ height: 50%; width: 5%; }                        
+                    }
+                    &.mail{
+                        flex: 0 1 25%;
+                        #mail_icon{ height: 60%; width: 10%;  }                        
+                    }
+                }
             }
         }
     }
