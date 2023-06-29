@@ -75,6 +75,7 @@ html, body {
   background-color: #F5F1EE;
   color: #58626C;
   position: fixed;
+  bottom: 0;
 }
 
 main {

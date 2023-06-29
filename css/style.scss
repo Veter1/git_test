@@ -18,6 +18,7 @@ html, body {
     background-color: $color_for_bg;
     color: #58626C;
     position:fixed;
+    bottom: 0;
 }
 
 main{
@@ -299,7 +300,7 @@ main{
                             border-radius: 40%;
                             a{
                                 display: flex;
-                                justify-content: center;
+                                justify-content: center;                                
                                 align-items: center;
                                 height: 80%;
                                 width: 80%;
