@@ -81,7 +81,7 @@ html, body {
 main {
   overflow: hidden;
   transition-duration: 1.5s;
-  min-height: 100vh;
+  min-height: 100%;
   /*
   #bubels{
       transition-duration: 1s;
