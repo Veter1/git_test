@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SWIPER --> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
     <!-- <meta name=”viewport” content=”user-scalable=no” /> -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/style.css">
@@ -43,12 +47,95 @@
                 <div class="wrapper_image"><img src="image/my_photo.jpg" alt="photo"></div>
             </div>
         </section>
-        <section class="sections section_3">section3</section>
-        <section class="sections section_4">section4</section>
+        <section class="sections section_3">
+            <div class="content">
+                <div class="header_wrapper"><h1>Мої навички</h1></div>
+                <div class="lists">
+                    <div class="list_1">
+                        <h2>Web-dev</h2>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS, SCSS</li>
+                            <li>JavaScript (скоро додам сюди React)</li>
+                            <li>PHP</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="list_2">
+                        <h2>Soft-dev</h2>
+                        <ul>
+                            <li>C#</li>
+                            <li>Uniy</li>
+                        </ul>
+                    </div>
+                    <div class="list_3">
+                        <h2>Other</h2>
+                        <ul>
+                            <li>Git</li>
+                            <li>GitHub</li>
+                            <li>Photoshop</li>
+                            <li>Blender</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sections section_4">
+            <div class="content">
+                <div class="header_wrapper"><h1>Досвід Web розробки</h1></div>
+                <div class="slider">
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="img_wrapper">
+                                <a href="https://Veter1.github.io/landing_travel_site">
+                                    <img src="image/pet_p_1.PNG" alt="picture">
+                                </a>
+                            </div>
+                            <div class="text_wrapper">
+                                <p>Pet-проєкт <br> (landing for travel site),<br>
+                                    створений з використанням:<br> html, css, js
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_wrapper">
+                                <a href="https://Veter1.github.io/landing_bicycle_shop/">
+                                    <img src="image/pet_p_2.PNG" alt="picture">
+                                </a>
+                            </div>
+                            <div class="text_wrapper">
+                                <p>Адаптивний Pet-проєкт <br> (landing for bicycle shop),<br>
+                                    створений з використанням:<br> html, css, js
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_wrapper">
+                                <a href="#"><img src="image/pet_p_2.PNG" alt="picture">
+                                </a>
+                            </div>
+                            <div class="text_wrapper">
+                                <p>Власний сайт-портфоліо, <br>
+                                    створений з використанням:<br> html, css, js
+                                </p>
+                            </div>
+                        </div>
+                      </div>
+                      <!-- If we need pagination -->
+                      <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="sections section_5">section5</section>
         <section class="sections section_6">section6</section>
     </main>
     <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
