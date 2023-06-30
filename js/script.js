@@ -104,9 +104,9 @@ document.addEventListener("touchstart", function(event){
     touchstart_y = event.changedTouches[0].pageY;
 })
 document.addEventListener("touchend", function(event){
-    if (event.changedTouches[0].pageY > touchstart_y && ((event.changedTouches[0].pageY - touchstart_y ) > 50))
+    if (event.changedTouches[0].pageY > touchstart_y && ((event.changedTouches[0].pageY - touchstart_y ) > 80))
         scrooll_to_section("up");
-    else if (event.changedTouches[0].pageY < touchstart_y && ((touchstart_y - event.changedTouches[0].pageY) > 50))
+    else if (event.changedTouches[0].pageY < touchstart_y && ((touchstart_y - event.changedTouches[0].pageY) > 80))
         scrooll_to_section("down");
 })
 // ---------------
@@ -261,3 +261,26 @@ const swiper = new Swiper('.swiper', {
     },
 });
 //------------------------------
+
+/* // корекція тексту в слайдері на менших екранах
+if (window.innerWidth < 1110){
+    let text_on_slider = body.querySelectorAll('.swiper-slide .text_wrapper');
+    console.log(text_on_slider);
+    for (let i = 0; i < text_on_slider.length; i++){
+        switch (i) {
+            case 0:{
+                text_on_slider[i].childNodes[1].textContent =
+                'Pet-проєкт (landing for travel site), створений з використанням: html, css, js';
+                break;}
+            case 1:{
+                text_on_slider[i].childNodes[1].textContent =
+                'Адаптивний Pet-проєкт (landing for bicycle shop), створений з використанням: html, css, js';
+                break;}
+            case 2:{
+                text_on_slider[i].childNodes[1].textContent =
+                'Власний сайт-портфоліо, створений з використанням: html, css, js';
+                break;}
+        }
+    }    
+}
+//------------------------------ */

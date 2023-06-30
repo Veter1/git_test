@@ -77,12 +77,13 @@ html, body {
   position: fixed;
   bottom: 0%;
   left: 0%;
+  min-width: 300px;
 }
 
 nav {
   position: absolute;
   bottom: 25%;
-  left: -8%;
+  left: -6%;
   height: 50%;
   width: 150px;
   background-color: #DAC8BE;
@@ -115,6 +116,37 @@ nav div.nav_panel div.nav_item img {
   height: 85%;
   width: 85%;
   filter: contrast(40%);
+}
+@media screen and (max-device-width: 1200px) {
+  nav {
+    left: -8%;
+  }
+  nav div.nav_panel div.nav_item {
+    height: 24%;
+    width: 48%;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 920px) {
+  nav {
+    left: -10%;
+    height: 40%;
+    bottom: 35%;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 920px) and (max-device-width: 600px) {
+  nav {
+    height: 40%;
+    width: 120px;
+  }
+  nav div.nav_panel div.nav_item {
+    height: 24%;
+    width: 60%;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 920px) and (max-device-width: 600px) and (max-device-width: 500px) {
+  nav {
+    left: -70px;
+  }
 }
 
 main {
@@ -165,7 +197,7 @@ main .section_1 div {
   flex-direction: column;
 }
 main .section_1 div div.wrapper_text {
-  flex: 1;
+  flex: 0 1 50%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -175,8 +207,34 @@ main .section_1 div div.wrapper_text h1 {
   letter-spacing: 3px;
   line-height: 1.5;
 }
+@media screen and (max-device-width: 1200px) {
+  main .section_1 div div.wrapper_text h1 {
+    padding-left: 12%;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 890px) {
+  main .section_1 div div.wrapper_text h1 {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 890px) and (max-device-width: 750px) {
+  main .section_1 div div.wrapper_text h1 {
+    letter-spacing: 2px;
+    line-height: 1.3;
+    padding-left: 25%;
+    padding-right: 5%;
+    text-align: right;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 890px) and (max-device-width: 750px) and (max-device-width: 600px) {
+  main .section_1 div div.wrapper_text h1 {
+    letter-spacing: 1px;
+    font-size: 34px;
+  }
+}
 main .section_1 div div.wrapper_image {
-  flex: 1;
+  flex: 0 1 50%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -185,6 +243,38 @@ main .section_1 div div.wrapper_image img {
   flex: 0 1 auto;
   height: 300px;
   width: 750px;
+}
+@media screen and (max-device-width: 890px) {
+  main .section_1 div div.wrapper_image img {
+    height: 280px;
+    width: 650px;
+  }
+}
+@media screen and (max-device-width: 890px) and (max-device-width: 760px) {
+  main .section_1 div div.wrapper_image img {
+    height: 250px;
+    width: 575px;
+  }
+}
+@media screen and (max-device-width: 890px) and (max-device-width: 760px) and (max-device-width: 680px) {
+  main .section_1 div div.wrapper_image img {
+    height: 210px;
+    width: 500px;
+  }
+}
+@media screen and (max-device-width: 890px) and (max-device-width: 760px) and (max-device-width: 680px) and (max-device-width: 590px) {
+  main .section_1 div div.wrapper_image img {
+    height: 150px;
+    width: 375px;
+  }
+}
+@media screen and (max-device-width: 600px) {
+  main .section_1 div div.wrapper_text {
+    flex: 0 1 60%;
+  }
+  main .section_1 div div.wrapper_image {
+    flex: 0 1 40%;
+  }
 }
 main .section_2 div.content {
   height: 100%;
@@ -201,10 +291,16 @@ main .section_2 div.content div.wrapper_text div {
   flex: 0 1 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 20px;
   padding-top: 25%;
+}
+@media screen and (max-device-width: 1200px) {
+  main .section_2 div.content div.wrapper_text div {
+    padding-top: 40%;
+    padding-left: 30%;
+  }
 }
 main .section_2 div.content div.wrapper_text div h1 {
   font-size: 36px;
@@ -215,14 +311,14 @@ main .section_2 div.content div.wrapper_text div li {
   line-height: 1.3;
   font-size: 26px;
 }
-main .section_2 div.content div.wrapper_text div li::after {
+main .section_2 div.content div.wrapper_text div li::before {
   content: "";
   display: block;
-  height: 6px;
-  width: 6px;
+  height: 8px;
+  width: 8px;
   border-radius: 50%;
-  top: -19px;
-  left: -10px;
+  top: 20px;
+  left: -15px;
   position: relative;
   background-color: #58626C;
 }
@@ -236,9 +332,60 @@ main .section_2 div.content div.wrapper_image img {
   flex: 0 1 auto;
   margin-bottom: 18%;
   height: 65%;
-  width: 50%;
+  width: 55%;
   border-radius: 5%;
   box-shadow: -8px 10px 5px 2px #DAC8BE;
+}
+@media screen and (max-device-width: 1300px) {
+  main .section_2 div.content div.wrapper_image img {
+    height: 45.5%;
+    width: 60%;
+    margin-bottom: 40%;
+  }
+}
+@media screen and (max-device-width: 1300px) and (max-device-width: 900px) {
+  main .section_2 div.content div.wrapper_image img {
+    width: 80%;
+    margin-bottom: 80%;
+  }
+}
+@media screen and (max-device-width: 700px) {
+  main .section_2 div.content {
+    flex-direction: column-reverse;
+  }
+  main .section_2 div.content div.wrapper_image img {
+    margin-bottom: 0%;
+    height: 71.5%;
+    width: 55%;
+    margin-left: 10%;
+    box-shadow: -8px 10px 5px 2px #DAC8BE;
+  }
+  main .section_2 div.content div.wrapper_text {
+    justify-content: center;
+    align-items: center;
+  }
+  main .section_2 div.content div.wrapper_text div {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 0%;
+    padding-left: 20%;
+  }
+  main .section_2 div.content div.wrapper_text div h1 {
+    font-size: 34px;
+    letter-spacing: 2px;
+  }
+  main .section_2 div.content div.wrapper_text div li {
+    letter-spacing: 0px;
+    line-height: 1;
+    font-size: 24px;
+  }
+  main .section_2 div.content div.wrapper_text div li::before {
+    height: 6px;
+    width: 6px;
+    top: 15px;
+    left: -10px;
+  }
 }
 main .section_3 div.content {
   height: 100%;
@@ -247,7 +394,6 @@ main .section_3 div.content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid 1px gray;
 }
 main .section_3 div.content div.header_wrapper {
   height: 100%;
@@ -258,92 +404,274 @@ main .section_3 div.content div.header_wrapper {
   align-items: center;
 }
 main .section_3 div.content div.header_wrapper h1 {
-  flex: 0 1 auto;
   letter-spacing: 3px;
   justify-self: center;
   padding-top: 4%;
   z-index: 2;
 }
-main .section_3 div.content div.lists {
-  flex: 0 1 60%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+@media screen and (max-device-width: 1024px) {
+  main .section_3 div.content div.header_wrapper h1 {
+    padding-top: 0%;
+  }
 }
-main .section_3 div.content div.lists div {
-  flex: 1;
+@media screen and (max-device-width: 760px) {
+  main .section_3 div.content div.header_wrapper {
+    align-items: flex-start;
+  }
+  main .section_3 div.content div.header_wrapper h1 {
+    letter-spacing: 2px;
+    padding-top: 5%;
+    font-size: 42px;
+  }
 }
-main .section_3 div.content div.lists div.list_1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+@media screen and (min-device-width: 1024px) {
+  main .section_3 div.content div.list_wrapper div.lists {
+    flex: 0 1 60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div {
+    flex: 1;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_1 h2 {
+    align-self: flex-start;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_1 ul {
+    letter-spacing: 2px;
+    line-height: 1.3;
+    font-size: 24px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_1 ul li::before {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    top: 15px;
+    left: -10px;
+    position: relative;
+    background-color: #58626C;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_2 ul {
+    letter-spacing: 2px;
+    line-height: 1.3;
+    font-size: 24px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_2 ul li::after {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    top: -19px;
+    left: -10px;
+    position: relative;
+    background-color: #58626C;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_3 ul {
+    letter-spacing: 2px;
+    line-height: 1.3;
+    font-size: 24px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div.list_3 ul li::after {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    top: -19px;
+    left: -10px;
+    position: relative;
+    background-color: #58626C;
+  }
 }
-main .section_3 div.content div.lists div.list_1 h2 {
-  align-self: flex-start;
+@media screen and (max-device-width: 1023px) {
+  main .section_3 div.content div.list_wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .section_3 div.content div.list_wrapper div.lists {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div {
+    top: 0%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 1s;
+    gap: 16px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div ul {
+    letter-spacing: 2px;
+    line-height: 1.3;
+    font-size: 36px;
+    opacity: 0;
+    transition-duration: 2s;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div ul li::before {
+    content: "";
+    display: block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    top: 25px;
+    left: -15px;
+    position: relative;
+    background-color: #58626C;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div:hover {
+    top: 15%;
+    left: 45%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div:hover ul {
+    opacity: 1;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_1 {
+    left: -10%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_1:hover {
+    left: 10%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_1 ul {
+    padding-left: 36%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_2 {
+    left: 50%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_3 {
+    left: 75%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_3 ul {
+    padding-left: 30%;
+  }
 }
-main .section_3 div.content div.lists div.list_1 ul {
-  letter-spacing: 2px;
-  line-height: 1.3;
-  font-size: 24px;
+@media screen and (max-device-width: 1023px) and (max-device-width: 620px) {
+  main .section_3 div.content div.list_wrapper div.lists div h2 {
+    font-size: 36px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div ul {
+    font-size: 30px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div ul li::before {
+    height: 7px;
+    width: 7px;
+    top: 22px;
+    left: -12px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div:hover {
+    top: 18%;
+    left: 42%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_1 {
+    left: -15%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_1:hover {
+    left: 0%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_1 ul {
+    padding-left: 36%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_2 {
+    left: 50%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_3 {
+    left: 70%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_3 ul {
+    padding-left: 30%;
+  }
 }
-main .section_3 div.content div.lists div.list_1 ul li::after {
-  content: "";
-  display: block;
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  top: -19px;
-  left: -10px;
-  position: relative;
-  background-color: #58626C;
+@media screen and (max-device-width: 1023px) and (max-device-width: 520px) {
+  main .section_3 div.content div.list_wrapper div.lists div h2 {
+    font-size: 24px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div ul {
+    font-size: 20px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div ul li::before {
+    height: 6px;
+    width: 6px;
+    top: 15px;
+    left: -10px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div:hover {
+    top: 20%;
+    left: 40%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_1 {
+    left: -20%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_1:hover {
+    left: 0%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_1 ul {
+    padding-left: 36%;
+  }
 }
-main .section_3 div.content div.lists div.list_2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+@media screen and (max-device-width: 1023px) and (max-device-width: 520px) and (min-device-width: 420px) {
+  main .section_3 div.content div.list_wrapper div.lists .list_1 {
+    left: -11%;
+  }
 }
-main .section_3 div.content div.lists div.list_2 ul {
-  letter-spacing: 2px;
-  line-height: 1.3;
-  font-size: 24px;
+@media screen and (max-device-width: 1023px) and (max-device-width: 520px) {
+  main .section_3 div.content div.list_wrapper div.lists .list_2 {
+    left: 50%;
+  }
 }
-main .section_3 div.content div.lists div.list_2 ul li::after {
-  content: "";
-  display: block;
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  top: -19px;
-  left: -10px;
-  position: relative;
-  background-color: #58626C;
+@media screen and (max-device-width: 1023px) and (max-device-width: 520px) {
+  main .section_3 div.content div.list_wrapper div.lists .list_3 {
+    left: 70%;
+  }
+  main .section_3 div.content div.list_wrapper div.lists .list_3 ul {
+    padding-left: 30%;
+  }
 }
-main .section_3 div.content div.lists div.list_3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-main .section_3 div.content div.lists div.list_3 ul {
-  letter-spacing: 2px;
-  line-height: 1.3;
-  font-size: 24px;
-}
-main .section_3 div.content div.lists div.list_3 ul li::after {
-  content: "";
-  display: block;
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  top: -19px;
-  left: -10px;
-  position: relative;
-  background-color: #58626C;
+@media screen and (max-device-width: 1023px) and (max-device-width: 340px) {
+  main .section_3 div.content div.list_wrapper div.lists div h2 {
+    font-size: 20px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div ul {
+    font-size: 16px;
+  }
+  main .section_3 div.content div.list_wrapper div.lists div ul li::before {
+    height: 4px;
+    width: 4px;
+    top: 12px;
+    left: -7px;
+  }
 }
 main .section_4 div.content {
   height: 100%;
@@ -356,7 +684,7 @@ main .section_4 div.content {
 main .section_4 div.content div.header_wrapper {
   height: 100%;
   width: 100%;
-  flex: 0 1 40%;
+  flex: 0 1 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -364,11 +692,42 @@ main .section_4 div.content div.header_wrapper {
 main .section_4 div.content div.header_wrapper h1 {
   flex: 0 1 auto;
   letter-spacing: 3px;
-  justify-self: center;
   z-index: 2;
 }
+@media screen and (max-device-width: 1150px) {
+  main .section_4 div.content div.header_wrapper h1 {
+    letter-spacing: 0px;
+  }
+}
+@media screen and (max-device-width: 1150px) and (max-device-width: 1024px) {
+  main .section_4 div.content div.header_wrapper h1 {
+    font-size: 42px;
+  }
+}
+@media screen and (max-device-width: 800px) {
+  main .section_4 div.content div.header_wrapper {
+    align-items: flex-start;
+    padding-top: 8%;
+  }
+  main .section_4 div.content div.header_wrapper h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+  }
+}
+@media screen and (max-device-width: 800px) and (max-device-width: 760px) {
+  main .section_4 div.content div.header_wrapper h1 {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+}
+@media screen and (max-device-width: 800px) and (max-device-width: 760px) and (max-device-width: 400px) {
+  main .section_4 div.content div.header_wrapper h1 {
+    font-size: 28px;
+    letter-spacing: 0px;
+  }
+}
 main .section_4 div.content div.slider {
-  flex: 0 1 60%;
+  flex: 0 1 70%;
   max-width: 100%;
   display: flex;
   justify-content: center;
@@ -376,36 +735,66 @@ main .section_4 div.content div.slider {
 }
 main .section_4 div.content div.slider .swiper {
   width: 80%;
-  height: 90%;
+  height: 98%;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+@media screen and (max-device-width: 1200px) {
+  main .section_4 div.content div.slider .swiper {
+    height: 88%;
+    padding-top: 5%;
+    width: 90%;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 800px) {
+  main .section_4 div.content div.slider .swiper {
+    height: 85%;
+    padding-top: 10%;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 800px) and (max-device-width: 760px) {
+  main .section_4 div.content div.slider .swiper {
+    height: 80%;
+  }
 }
 main .section_4 div.content div.slider .swiper .swiper-slide {
   display: flex;
   height: 100%;
   width: 100%;
 }
+@media screen and (max-device-width: 1200px) {
+  main .section_4 div.content div.slider .swiper .swiper-slide {
+    padding-left: 5%;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 800px) {
+  main .section_4 div.content div.slider .swiper .swiper-slide {
+    padding-left: 10%;
+  }
+}
 main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper {
-  flex: 0 1 30%;
+  flex: 0 1 35%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #DAC8BE;
-  border-radius: 40%;
+  border-radius: 10%;
+  padding-bottom: 5%;
 }
 main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80%;
+  height: 90%;
   width: 80%;
 }
 main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a img {
   height: 100%;
   width: 100%;
   border-radius: 15%;
-  box-shadow: -10px 12px 10px 2px #58626C;
+  box-shadow: -4px 5px 6px 3px #58626C;
 }
 main .section_4 div.content div.slider .swiper .swiper-slide .text_wrapper {
-  flex: 0 1 70%;
+  flex: 0 1 65%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -416,6 +805,46 @@ main .section_4 div.content div.slider .swiper .swiper-slide .text_wrapper p {
   line-height: 1.3;
   background-color: #ECC1A1;
   border-radius: 50%;
+}
+@media screen and (max-device-width: 1200px) {
+  main .section_4 div.content div.slider .swiper .swiper-slide .text_wrapper p {
+    letter-spacing: 1px;
+    font-size: 44px;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 1024px) {
+  main .section_4 div.content div.slider .swiper .swiper-slide .text_wrapper p {
+    letter-spacing: 1px;
+    font-size: 36px;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 1024px) and (max-device-width: 800px) {
+  main .section_4 div.content div.slider .swiper .swiper-slide .text_wrapper p {
+    font-size: 28px;
+  }
+}
+@media screen and (max-device-width: 1200px) and (max-device-width: 1024px) and (max-device-width: 800px) and (max-device-width: 760px) {
+  main .section_4 div.content div.slider .swiper .swiper-slide .text_wrapper p {
+    font-size: 26px;
+    letter-spacing: 0px;
+    line-height: 1.1;
+  }
+}
+@media screen and (max-device-width: 760px) {
+  main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper {
+    flex: 0 1 50%;
+  }
+  main .section_4 div.content div.slider .swiper .swiper-slide .text_wrapper {
+    flex: 0 1 50%;
+  }
+}
+@media screen and (max-device-width: 760px) and (max-device-width: 500px) {
+  main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper {
+    flex: 1;
+  }
+  main .section_4 div.content div.slider .swiper .swiper-slide .text_wrapper {
+    display: none;
+  }
 }
 main .section_6 div.content {
   height: 100%;
@@ -435,11 +864,28 @@ main .section_6 div.content div.header_wrapper {
   align-items: center;
 }
 main .section_6 div.content div.header_wrapper h1 {
-  flex: 0 1 auto;
   letter-spacing: 10px;
   justify-self: center;
   z-index: 0;
   font-size: 64px;
+}
+@media screen and (max-device-width: 1024px) {
+  main .section_6 div.content div.header_wrapper h1 {
+    font-size: 46px;
+    letter-spacing: 6px;
+  }
+}
+@media screen and (max-device-width: 1024px) and (max-device-width: 768px) {
+  main .section_6 div.content div.header_wrapper h1 {
+    font-size: 38px;
+    letter-spacing: 4px;
+  }
+}
+@media screen and (max-device-width: 1024px) and (max-device-width: 768px) and (max-device-width: 480px) {
+  main .section_6 div.content div.header_wrapper h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
 }
 main .section_6 div.content div.contacts_wrapper {
   z-index: 2;
@@ -450,6 +896,7 @@ main .section_6 div.content div.contacts_wrapper {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 36px;
 }
 main .section_6 div.content div.contacts_wrapper div {
   flex: 1;
@@ -469,26 +916,87 @@ main .section_6 div.content div.contacts_wrapper div.messangers img {
 }
 main .section_6 div.content div.contacts_wrapper div.messangers #viber_icon {
   margin-left: 5%;
-  height: 40%;
+  height: 45%;
   width: 10%;
 }
+main .section_6 div.content div.contacts_wrapper div.messangers #viber_icon:hover {
+  cursor: pointer;
+}
 main .section_6 div.content div.contacts_wrapper div.messangers #telegram_icon {
-  height: 47%;
+  height: 52%;
   width: 15%;
+}
+main .section_6 div.content div.contacts_wrapper div.messangers #telegram_icon:hover {
+  cursor: pointer;
+}
+@media screen and (max-device-width: 1024px) {
+  main .section_6 div.content div.contacts_wrapper div.messangers img {
+    padding-top: 3%;
+  }
+}
+@media screen and (max-device-width: 1024px) and (max-device-width: 600px) {
+  main .section_6 div.content div.contacts_wrapper div.messangers img {
+    padding-top: 8%;
+  }
+}
+@media screen and (max-device-width: 1024px) and (max-device-width: 600px) and (max-device-width: 480px) {
+  main .section_6 div.content div.contacts_wrapper div.messangers #viber_icon {
+    width: 20%;
+  }
+  main .section_6 div.content div.contacts_wrapper div.messangers #telegram_icon {
+    width: 30%;
+  }
 }
 main .section_6 div.content div.contacts_wrapper div.phone {
   flex: 0 1 25%;
 }
 main .section_6 div.content div.contacts_wrapper div.phone #phone_icon {
-  height: 50%;
+  height: 55%;
   width: 5%;
+}
+@media screen and (max-device-width: 600px) {
+  main .section_6 div.content div.contacts_wrapper div.phone #phone_icon {
+    height: 40%;
+    width: 5%;
+  }
+}
+@media screen and (max-device-width: 600px) and (max-device-width: 480px) {
+  main .section_6 div.content div.contacts_wrapper div.phone #phone_icon {
+    width: 8%;
+  }
 }
 main .section_6 div.content div.contacts_wrapper div.mail {
   flex: 0 1 25%;
 }
 main .section_6 div.content div.contacts_wrapper div.mail #mail_icon {
-  height: 60%;
+  height: 65%;
   width: 10%;
+}
+@media screen and (max-device-width: 600px) {
+  main .section_6 div.content div.contacts_wrapper div.mail #mail_icon {
+    height: 50%;
+    width: 10%;
+  }
+}
+@media screen and (max-device-width: 600px) and (max-device-width: 480px) {
+  main .section_6 div.content div.contacts_wrapper div.mail #mail_icon {
+    width: 15%;
+  }
+}
+@media screen and (max-device-width: 800px) {
+  main .section_6 div.content div.contacts_wrapper {
+    font-size: 30px;
+  }
+}
+@media screen and (max-device-width: 800px) and (max-device-width: 600px) {
+  main .section_6 div.content div.contacts_wrapper {
+    font-size: 24px;
+  }
+}
+@media screen and (max-device-width: 800px) and (max-device-width: 600px) and (max-device-width: 480px) {
+  main .section_6 div.content div.contacts_wrapper {
+    font-size: 20px;
+  }
 }
 main .circles {
   transition-duration: 1s;
