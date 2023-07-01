@@ -297,57 +297,57 @@ function go_bubels(event){
             switch (event.target.textContent) {
                 case 'HTML':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/HTML.png') 0 0/"+buble_size+" no-repeat;";
+                    "background: url('./image/technologi/HTML.png') 0 0/"+buble_size+" no-repeat;";
                     break;
                 }
                 case 'CSS, SCSS':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/sass.png') 0 0/"+buble_size+" no-repeat;";
+                    "background: url('./image/technologi/sass.png') 0 0/"+buble_size+" no-repeat;";
                     break;
                 }
                 case 'JavaScript (скоро додам сюди React)':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/js.png') 0 0/"+buble_size+" no-repeat;";
+                    "background: url('./image/technologi/js.png') 0 0/"+buble_size+" no-repeat;";
                     break;
                 }
                 case 'PHP':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/php.png') 0 0/"+buble_size+"  no-repeat;";
+                    "background: url('./image/technologi/php.png') 0 0/"+buble_size+"  no-repeat;";
                     break;
                 }
                 case 'SQL':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/sql.png') 0 0/"+buble_size+"  no-repeat;";
+                    "background: url('./image/technologi/sql.png') 0 0/"+buble_size+"  no-repeat;";
                     break;
                 }
                 case 'C#':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/language_c.png') 0 0/"+buble_size+"  no-repeat;";
+                    "background: url('./image/technologi/language_c.png') 0 0/"+buble_size+"  no-repeat;";
                     break;
                 }
                 case 'Uniy':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/Unity.png') 0 0/"+buble_size+"  no-repeat;";
+                    "background: url('./image/technologi/Unity.png') 0 0/"+buble_size+"  no-repeat;";
                     break;
                 }
                 case 'Git':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/git.png') 0 0/"+buble_size+"  no-repeat;";
+                    "background: url('./image/technologi/git.png') 0 0/"+buble_size+"  no-repeat;";
                     break;
                 }
                 case 'GitHub':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/git_hub.png') 0 0/"+buble_size+"  no-repeat;";
+                    "background: url('./image/technologi/git_hub.png') 0 0/"+buble_size+"  no-repeat;";
                     break;
                 }
                 case 'Photoshop':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/Photoshop.png') 0 0/"+buble_size+"  no-repeat;";
+                    "background: url('./image/technologi/Photoshop.png') 0 0/"+buble_size+"  no-repeat;";
                     break;
                 }
                 case 'Blender':{
                     bubel_copy.style = bubel_copy.style.cssText +
-                    "background: url('../image/technologi/blender.png') 0 0/"+buble_size+"  no-repeat;";
+                    "background: url('./image/technologi/blender.png') 0 0/"+buble_size+"  no-repeat;";
                     break;
                 }
             }
