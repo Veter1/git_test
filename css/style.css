@@ -110,12 +110,22 @@ nav div.nav_panel div.nav_item {
   align-items: center;
   justify-content: center;
   transition-duration: 0.5s;
+  box-shadow: 0px 1px 6px 0px rgb(158, 129, 254);
+  border: 2px solid rgb(50, 50, 50);
+  transform: scale(1);
+  transition: 0.2s;
+  transition-timing-function: linear;
 }
 nav div.nav_panel div.nav_item img {
   flex: 0 1 auto;
   height: 85%;
   width: 85%;
   filter: contrast(40%);
+}
+nav div.nav_panel div.nav_item:hover {
+  transform: scale(1.1) !important;
+  border: 1px solid rgb(50, 50, 50) !important;
+  cursor: pointer !important;
 }
 @media screen and (max-device-width: 1200px) {
   nav {
@@ -149,24 +159,29 @@ nav div.nav_panel div.nav_item img {
   }
 }
 
+.start_animate_span {
+  animation: for_span 0.6s;
+}
+
+@keyframes for_span {
+  0% {
+    transform: translateY(0rem) scale(1);
+    color: #58626C;
+  }
+  50% {
+    transform: translateY(-0.8rem) scale(1.2);
+    color: hsl(19, 90%, 52%);
+  }
+  100% {
+    transform: translateY(0rem) scale(1);
+    color: #58626C;
+  }
+}
 main {
   overflow: hidden;
   transition-duration: 1.5s;
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
-  /*
-  #bubels{
-      transition-duration: 1s;
-      position: absolute;
-      height: 200px;
-      width: 220px;
-      border-radius: 50%;
-      background-color: $color_for_el_2;
-      opacity: 0.9;
-      //animation-name: test;
-      //animation-duration: 10s; 
-      //animation-timing-function: ease-in-out;
-  }*/
 }
 main section {
   overflow: hidden;
@@ -199,38 +214,79 @@ main .section_1 div {
 main .section_1 div div.wrapper_text {
   flex: 0 1 50%;
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+main .section_1 div div.wrapper_text div.wrapper_text_2 {
+  margin-left: 10%;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+  gap: 20px;
 }
-main .section_1 div div.wrapper_text h1 {
-  padding-left: 10%;
-  letter-spacing: 3px;
-  line-height: 1.5;
+main .section_1 div div.wrapper_text div.wrapper_text_2 div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 48px;
+  width: 90%;
 }
-@media screen and (max-device-width: 1200px) {
-  main .section_1 div div.wrapper_text h1 {
-    padding-left: 12%;
+main .section_1 div div.wrapper_text div.wrapper_text_2 div:hover {
+  cursor: grab;
+}
+main .section_1 div div.wrapper_text div.wrapper_text_2 div span {
+  transition: 0.4s;
+}
+main .section_1 div div.wrapper_text div.wrapper_text_2 div span:hover {
+  transform: translateY(-0.8rem) scale(1.2);
+  color: hsl(19, 90%, 52%);
+}
+@media screen and (max-device-width: 1024px) {
+  main .section_1 div div.wrapper_text div.wrapper_text_2 {
+    margin-left: 15%;
   }
 }
-@media screen and (max-device-width: 1200px) and (max-device-width: 890px) {
-  main .section_1 div div.wrapper_text h1 {
-    padding-left: 20%;
-    padding-right: 20%;
+@media screen and (max-device-width: 1024px) and (max-device-width: 768px) {
+  main .section_1 div div.wrapper_text div.wrapper_text_2 {
+    margin-left: 0%;
+    gap: 12px;
+    margin-top: 10%;
+  }
+  main .section_1 div div.wrapper_text div.wrapper_text_2 div {
+    justify-content: flex-end;
+  }
+  main .section_1 div div.wrapper_text div.wrapper_text_2 div span {
+    font-size: 36px;
   }
 }
-@media screen and (max-device-width: 1200px) and (max-device-width: 890px) and (max-device-width: 750px) {
-  main .section_1 div div.wrapper_text h1 {
-    letter-spacing: 2px;
-    line-height: 1.3;
-    padding-left: 25%;
-    padding-right: 5%;
-    text-align: right;
+@media screen and (max-device-width: 1024px) and (max-device-width: 768px) and (max-device-width: 600px) {
+  main .section_1 div div.wrapper_text div.wrapper_text_2 {
+    justify-content: center;
+    align-items: flex-start;
   }
 }
-@media screen and (max-device-width: 1200px) and (max-device-width: 890px) and (max-device-width: 750px) and (max-device-width: 600px) {
-  main .section_1 div div.wrapper_text h1 {
-    letter-spacing: 1px;
-    font-size: 34px;
+@media screen and (max-device-width: 1024px) and (max-device-width: 768px) and (max-device-width: 600px) and (max-device-width: 500px) {
+  main .section_1 div div.wrapper_text div.wrapper_text_2 {
+    gap: 10px;
+  }
+  main .section_1 div div.wrapper_text div.wrapper_text_2 div span {
+    font-size: 30px;
+    background-color: #DAC8BE;
+    border-radius: 50%;
+  }
+}
+@media screen and (max-device-width: 1024px) and (max-device-width: 768px) and (max-device-width: 600px) and (max-device-width: 500px) and (max-device-width: 368px) {
+  main .section_1 div div.wrapper_text div.wrapper_text_2 {
+    gap: 6px;
+  }
+  main .section_1 div div.wrapper_text div.wrapper_text_2 div span {
+    font-size: 24px;
   }
 }
 main .section_1 div div.wrapper_image {
@@ -270,16 +326,17 @@ main .section_1 div div.wrapper_image img {
 }
 @media screen and (max-device-width: 600px) {
   main .section_1 div div.wrapper_text {
-    flex: 0 1 60%;
+    flex: 0 1 65%;
   }
   main .section_1 div div.wrapper_image {
-    flex: 0 1 40%;
+    flex: 0 1 35%;
   }
 }
 main .section_2 div.content {
   height: 100%;
   width: 100%;
   display: flex;
+  perspective: 1000px;
 }
 main .section_2 div.content div.wrapper_text {
   flex: 1;
@@ -327,6 +384,10 @@ main .section_2 div.content div.wrapper_image {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition-duration: 2s;
+}
+main .section_2 div.content div.wrapper_image:hover {
+  transform: rotateX(20deg) rotateY(180deg);
 }
 main .section_2 div.content div.wrapper_image img {
   flex: 0 1 auto;
@@ -405,24 +466,34 @@ main .section_3 div.content div.header_wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
-main .section_3 div.content div.header_wrapper h1 {
+main .section_3 div.content div.header_wrapper p {
   letter-spacing: 3px;
   justify-self: center;
   padding-bottom: 10%;
-  z-index: 2;
+  transition: 0.4s;
+  transform: translateX(0);
 }
 @media screen and (max-device-width: 1024px) {
-  main .section_3 div.content div.header_wrapper h1 {
+  main .section_3 div.content div.header_wrapper p {
     padding-bottom: 0%;
   }
 }
 @media screen and (max-device-width: 770px) {
-  main .section_3 div.content div.header_wrapper h1 {
+  main .section_3 div.content div.header_wrapper p {
     letter-spacing: 2px;
     padding-top: 5%;
     font-size: 34px;
   }
+}
+main .section_3 div.content div.header_wrapper p:hover {
+  transform: translateY(-0.5rem) scale(1.2);
+  color: hsl(19, 90%, 52%);
+  cursor: grab;
+}
+main .section_3 div.content div.list_wrapper li {
+  cursor: pointer;
 }
 @media screen and (min-device-width: 1024px) {
   main .section_3 div.content div.list_wrapper div.lists {
@@ -689,18 +760,24 @@ main .section_4 div.content div.header_wrapper {
   justify-content: center;
   align-items: center;
 }
-main .section_4 div.content div.header_wrapper h1 {
-  flex: 0 1 auto;
+main .section_4 div.content div.header_wrapper p {
   letter-spacing: 3px;
   z-index: 2;
+  transform: translateX(0);
+  transition: 0.4s;
+}
+main .section_4 div.content div.header_wrapper p:hover {
+  transform: translateY(-0.5rem) scale(1.2);
+  color: hsl(19, 90%, 52%);
+  cursor: grab;
 }
 @media screen and (max-device-width: 1150px) {
-  main .section_4 div.content div.header_wrapper h1 {
+  main .section_4 div.content div.header_wrapper p {
     letter-spacing: 0px;
   }
 }
 @media screen and (max-device-width: 1150px) and (max-device-width: 1024px) {
-  main .section_4 div.content div.header_wrapper h1 {
+  main .section_4 div.content div.header_wrapper p {
     font-size: 42px;
   }
 }
@@ -709,7 +786,7 @@ main .section_4 div.content div.header_wrapper h1 {
     align-items: flex-start;
     padding-top: 8%;
   }
-  main .section_4 div.content div.header_wrapper h1 {
+  main .section_4 div.content div.header_wrapper p {
     font-size: 36px;
     letter-spacing: 1px;
   }
@@ -720,13 +797,13 @@ main .section_4 div.content div.header_wrapper h1 {
     padding-top: 0%;
     padding-bottom: 5%;
   }
-  main .section_4 div.content div.header_wrapper h1 {
+  main .section_4 div.content div.header_wrapper p {
     font-size: 30px;
     letter-spacing: 1px;
   }
 }
 @media screen and (max-device-width: 800px) and (max-device-width: 770px) and (max-device-width: 400px) {
-  main .section_4 div.content div.header_wrapper h1 {
+  main .section_4 div.content div.header_wrapper p {
     font-size: 28px;
     letter-spacing: 0px;
   }
@@ -784,19 +861,52 @@ main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper {
   align-items: center;
   border-radius: 10%;
   padding-bottom: 5%;
+  perspective: 500px;
 }
 main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90%;
   width: 80%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.5s;
 }
 main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a img {
   height: 100%;
   width: 100%;
   border-radius: 15%;
   box-shadow: -4px 5px 6px 3px #58626C;
+  transition: transform 0.5s;
+}
+main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a .card_img_title {
+  color: #ECC1A1;
+  position: absolute;
+  top: 8%;
+  right: 20px;
+  transform: translateY(-50%);
+  transition-duration: 0.5s;
+  font-size: 36px;
+  text-shadow: 0.1px 1px 0 #e0b899, 0.3px 1.75px 0 #cea88c, 0.5px 2.5px 0 #bb987f, 0.7px 3.25px 0 #ac8b74, 0.9px 4px 0 #977a65;
+}
+main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a:hover {
+  transform: translateZ(10px) rotateX(25deg) rotateY(25deg);
+}
+main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a:hover .card_img_title {
+  transform: translateZ(50px);
+}
+@media screen and (max-device-width: 1024px) {
+  main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a .card_img_title {
+    display: none;
+  }
+  main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a:hover {
+    transform: translateZ(0px) rotateX(0deg) rotateY(0deg);
+  }
+  main .section_4 div.content div.slider .swiper .swiper-slide .img_wrapper a:hover .card_img_title {
+    transform: translateZ(0px);
+  }
 }
 main .section_4 div.content div.slider .swiper .swiper-slide .text_wrapper {
   flex: 0 1 65%;
@@ -868,26 +978,33 @@ main .section_6 div.content div.header_wrapper {
   justify-content: center;
   align-items: center;
 }
-main .section_6 div.content div.header_wrapper h1 {
+main .section_6 div.content div.header_wrapper p {
   letter-spacing: 10px;
   justify-self: center;
   z-index: 0;
   font-size: 64px;
+  transition: 0.4s;
+  transform: translateX(0);
+}
+main .section_6 div.content div.header_wrapper p:hover {
+  transform: translateY(-0.5rem) scale(1.2);
+  color: hsl(19, 90%, 52%);
+  cursor: grab;
 }
 @media screen and (max-device-width: 1024px) {
-  main .section_6 div.content div.header_wrapper h1 {
+  main .section_6 div.content div.header_wrapper p {
     font-size: 46px;
     letter-spacing: 6px;
   }
 }
 @media screen and (max-device-width: 1024px) and (max-device-width: 768px) {
-  main .section_6 div.content div.header_wrapper h1 {
+  main .section_6 div.content div.header_wrapper p {
     font-size: 38px;
     letter-spacing: 4px;
   }
 }
 @media screen and (max-device-width: 1024px) and (max-device-width: 768px) and (max-device-width: 480px) {
-  main .section_6 div.content div.header_wrapper h1 {
+  main .section_6 div.content div.header_wrapper p {
     font-size: 32px;
     letter-spacing: 2px;
   }
@@ -1010,4 +1127,13 @@ main .circles {
   border-radius: 50%;
   opacity: 0.7;
   z-index: 2;
+}
+main #bubels {
+  transition-duration: 1s;
+  position: absolute;
+  height: 25%;
+  width: 25%;
+  opacity: 0.9;
+  top: 200%;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */
