@@ -353,6 +353,9 @@ main .section_2 div.content div.wrapper_image img {
   main .section_2 div.content {
     flex-direction: column-reverse;
   }
+  main .section_2 div.content div.wrapper_image {
+    align-items: flex-end;
+  }
   main .section_2 div.content div.wrapper_image img {
     margin-bottom: 0%;
     height: 71.5%;
@@ -406,22 +409,19 @@ main .section_3 div.content div.header_wrapper {
 main .section_3 div.content div.header_wrapper h1 {
   letter-spacing: 3px;
   justify-self: center;
-  padding-top: 4%;
+  padding-bottom: 10%;
   z-index: 2;
 }
 @media screen and (max-device-width: 1024px) {
   main .section_3 div.content div.header_wrapper h1 {
-    padding-top: 0%;
+    padding-bottom: 0%;
   }
 }
-@media screen and (max-device-width: 760px) {
-  main .section_3 div.content div.header_wrapper {
-    align-items: flex-start;
-  }
+@media screen and (max-device-width: 770px) {
   main .section_3 div.content div.header_wrapper h1 {
     letter-spacing: 2px;
     padding-top: 5%;
-    font-size: 42px;
+    font-size: 34px;
   }
 }
 @media screen and (min-device-width: 1024px) {
@@ -714,13 +714,18 @@ main .section_4 div.content div.header_wrapper h1 {
     letter-spacing: 1px;
   }
 }
-@media screen and (max-device-width: 800px) and (max-device-width: 760px) {
+@media screen and (max-device-width: 800px) and (max-device-width: 770px) {
+  main .section_4 div.content div.header_wrapper {
+    align-items: center;
+    padding-top: 0%;
+    padding-bottom: 5%;
+  }
   main .section_4 div.content div.header_wrapper h1 {
     font-size: 30px;
     letter-spacing: 1px;
   }
 }
-@media screen and (max-device-width: 800px) and (max-device-width: 760px) and (max-device-width: 400px) {
+@media screen and (max-device-width: 800px) and (max-device-width: 770px) and (max-device-width: 400px) {
   main .section_4 div.content div.header_wrapper h1 {
     font-size: 28px;
     letter-spacing: 0px;
