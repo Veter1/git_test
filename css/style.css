@@ -966,7 +966,7 @@ main .section_6 div.content {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   border: solid 2px grey;
 }
@@ -1019,6 +1019,7 @@ main .section_6 div.content div.contacts_wrapper {
   justify-content: center;
   align-items: center;
   font-size: 36px;
+  border: solid 1px grey;
 }
 main .section_6 div.content div.contacts_wrapper div {
   flex: 1;
@@ -1105,9 +1106,19 @@ main .section_6 div.content div.contacts_wrapper div.mail #mail_icon {
     width: 15%;
   }
 }
+@media screen and (max-device-width: 330px) {
+  main .section_6 div.content div.contacts_wrapper div.mail {
+    font-size: 18px;
+    padding-right: 20px;
+  }
+  main .section_6 div.content div.contacts_wrapper div.mail #mail_icon {
+    height: 40%;
+  }
+}
 @media screen and (max-device-width: 800px) {
   main .section_6 div.content div.contacts_wrapper {
     font-size: 30px;
+    flex: 0 1 60%;
   }
 }
 @media screen and (max-device-width: 800px) and (max-device-width: 600px) {

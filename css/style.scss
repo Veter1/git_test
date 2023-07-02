@@ -806,7 +806,7 @@ main{
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             border: solid 2px grey;
 
@@ -850,6 +850,7 @@ main{
                 justify-content: center;
                 align-items: center;
                 font-size: 36px;
+                border: solid 1px grey;
                 div{
                     flex: 1;
                     display: flex;
@@ -902,11 +903,16 @@ main{
                                 height: 50%; width: 10%;
                                 @media screen and (max-device-width: 480px){ width: 15%; }
                             }
-                        }                        
+                        }  
+                        @media screen and (max-device-width: 330px){
+                            font-size: 18px; padding-right: 20px;
+                            #mail_icon{ height: 40%; }
+                        }                      
                     }
                 }
                 @media screen and (max-device-width: 800px){
                     font-size: 30px;
+                    flex: 0 1 60%;
                     @media screen and (max-device-width: 600px){
                         font-size: 24px;
                         @media screen and (max-device-width: 480px){
