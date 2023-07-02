@@ -1,3 +1,5 @@
+// window.onload = function(){ alert('усі ресурси успішно завантажені'); }
+window.onerror = function(msg, url, lineNo, columnNo, error) { alert(msg+'\n'+url+'\n'+lineNo+'\n'+columnNo+'\n'+error); }
 
 let body = document.body;
 
